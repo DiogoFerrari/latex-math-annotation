@@ -1,0 +1,83 @@
+%% =================================================
+%% my-math-commands.sty
+%% --------------------
+%% Author: Diogo Ferrari
+%%
+%%
+%% latex template for mathematical anotation
+%% Last version: Dez/2015
+%=================================================
+
+
+\ProvidesPackage{my-math-commands}
+%=================================================
+%		Letters and math symbols
+%=================================================
+%% -------------
+%% Prob and Stat
+%% -------------
+\newcommand{\F}{\mathcal{F}}									   %- funcy f
+\newcommand{\Sa}{\mathcal{S}}                                      %- sample space
+\newcommand{\Ev}{\mathcal{E}}                                      %- event
+\newcommand{\U}{\mathcal{U}}									   %- Universe
+\newcommand{\X}{\mathcal{X}}									   %- Set of  rv X
+\newcommand{\Y}{\mathcal{Y}}									   %- Set of  rv Y
+\newcommand{\C}{\mathcal{C}}									   %- Set of  rv C
+\newcommand{\E}{\mathbb{E}}                                        %- expectation
+\newcommand{\Var}{\mathbb{V}\text{ar}}                             %- variance
+\newcommand{\Cov}{\mathbb{C}\text{ov}}                             %- covariance
+\newcommand{\Corr}{\mathbb{C}\text{orr}}		                   %- correlation
+\newcommand{\given}{\mid}                                          %- given/conditional
+\newcommand{\I}{\mathbb{I}}                                        %- Indicator function
+\newcommand{\rmatr}[1]{\mathbf{#1}}                                %- random matrix (bold upper case)
+\DeclareMathOperator*{\plim}{plim}                                 %- prob limit
+\newcommand\ind{\protect\mathpalette{\protect\independenT}{\perp}} %- stoch independence
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}       %- stoch independence
+\newcommand{\iid}{\overset{iid}{\sim}}                             %- iid
+\newcommand{\convdist}{\overset{d}{\rightarrow}}                   %- conv in distribution
+\newcommand{\convprob}{\overset{p}{\rightarrow}}                   %- conv in probability
+\newcommand{\convas}{\overset{a.s.}{\rightarrow}}                  %- conv almost sure
+%% Distributions
+\newcommand{\No}{\mathcal{N}}                                      %- Normal Distribution
+%% -----------------
+%% Sets/Set notation
+%% -----------------
+\newcommand{\N}{\mathbb{N}}                                        %- Set of Natural Numbers
+\newcommand{\Z}{\mathbb{Z}}                                        %- Set of Integers
+\newcommand{\Q}{\mathbb{Q}}                                        %- Set of rationals
+\newcommand{\R}{\mathbb{R}}                                        %- Set of reals
+%% -----
+%% Logic
+%% -----
+\newcommand{\AND}{\wedge}                                          %- and
+\newcommand{\OR}{\vee}                                             %- or
+%% --------------
+%% Linear Algebra
+%% --------------
+\newcommand{\inner}[1]{\langle#1\rangle}                           %- inner product
+%% --------
+%% Calculus
+%% --------
+\newcommand{\p}{\partial}                                          %- partial derivatives
+\DeclareMathOperator*{\limsup}{lim sup}                            %- lim sup    
+\DeclareMathOperator*{\liminf}{lim inf}                            %- lim inf
+\DeclareMathOperator*{\argmax}{argmax}                             %- argmax
+\DeclareMathOperator*{\argmin}{argmin}                             %- argmin
+\newcommand{\dom}{\text{dom}}                                      %- domain of f
+\newcommand{\img}{\text{img}}                                      %- image of f
+\newcommand\at[2]{\left.#1\right|_{#2}}                            %- derivative at
+\newcommand{\Lagr}{\mathcal{L}}                                    %- Lagrangian
+\newcommand{\e}{\varepsilon}                                       %- epsilon
+%% ------
+%% Others
+%% ------
+\newcommand{\vect}[1]{\boldsymbol{#1}}                             %- vector bold font
+\newcommand{\abs}[1]{\left|#1\right|}                             %- vector bold font
+\newcommand{\def}{\triangleq}                                      %- definition
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}                    %- ceiling func
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}                 %- floor func
+%% condition environment, for description of vars (works similar to align)
+\newenvironment{conditions}
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\end{tabular}\par\vspace{\belowdisplayskip}}
